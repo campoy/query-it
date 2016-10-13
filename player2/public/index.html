@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Player2 Input</title>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDIIHS0S6QzTT2tCakn8wzW15t_9fvxWqE",
+        authDomain: "launchpad-demos.firebaseapp.com",
+        databaseURL: "https://launchpad-demos.firebaseio.com",
+        storageBucket: "launchpad-demos.appspot.com",
+        messagingSenderId: "341795040225"
+    };
+    firebase.initializeApp(config);
+    var ref = firebase.database().ref('keys');
+    document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        var charCode = evt.keyCode || evt.which;
+        var charStr = String.fromCharCode(charCode);
+        if (charCode == 13){
+            charStr = 'ENTER'
+        } else if (charCode == 8 || charCode == 46) {
+            charStr = 'BACKSPACE'
+        }
+        ref.push({'key':charStr})
+    };
+    </script>
+</body>
+</html>

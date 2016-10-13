@@ -93,10 +93,10 @@ export default class Player extends View {
     return this.parse`
       <div class="player">
         <div class="player__press js-player-one-press">
-          <span class="player__copy">Press <span class="player__highlight">Query It!</span> to play</span>
+          <span class="player__copy">Press <span class="player__highlight">Enter</span> to play</span>
         </div>
         <div class="player__press player__press--two js-player-two-press">
-          <span class="player__copy">Press <span class="player__highlight">Query It!</span> to play</span>
+          <span class="player__copy">Press <span class="player__highlight">Enter</span> to play</span>
         </div>
       </div>
     `;
